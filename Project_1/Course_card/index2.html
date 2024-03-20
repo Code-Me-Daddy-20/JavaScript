@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course_card</title>
+    <style>
+        body{
+            background: linear-gradient(0.25turn, #459dc3, #ebf8e1, #f69d3c);
+            margin: 0px;padding: 0px;
+            border: bird-box;
+            height: 100vh;
+            font-size: 1.4rem;
+        }
+        .box{
+            position: absolute;
+            top: 50%;left: 50%;
+            height: max-content;width: max-content;
+            padding: 10px;
+            border: 5px solid black; border-radius: 20px;
+            background-color: rgba(36, 36, 35,0.4);
+            transform:translate(-50%,-50%);
+        }
+        .sub_box{
+            width: 610px;height: 280px;
+            padding: 0px 20px 10px 20px;margin: 10px;
+            border-radius: 20px;
+            background-color: rgba(36, 36, 35,0.5); color: aliceblue;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .sub_box::-webkit-scrollbar{
+            display: none;
+        }
+        .hd{
+            margin: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1 class="hd" style="text-align: center;">Course Card</h1>
+        <h2 id="owner" style="text-align: center; color: #3018e4;"></h2>
+        <h3 class="hd" style="text-align: center;"><u>FrontEnd Course</u></h3>
+        <div class="sub_box">
+            <p id="wel"><b>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quasi fuga corporis repellat consequatur veniam totam sint pariatur placeat voluptatem qui, modi inventore odit sed voluptatum magni cupiditate minima cum.
+                Id ex exercitationem possimus alias, hic inventore vel ipsam excepturi modi libero illum quia reprehenderit maxime dolorem ut et harum deleniti aspernatur, culpa necessitatibus accusamus, cumque esse dolorum in. Impedit?
+                Adipisci cumque repudianda
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum veritatis commodi omnis recusandae accusantium doloremque sapiente libero iure doloribus quis animi voluptates rem molestias sed maiores amet tenetur, illum dolor!e velit officiis accusantium error commodi eaque dolore alias, ducimus facere unde illo architecto ea suscipit quas, exercitationem soluta, reiciendis temporibus? Deleniti dolores ex quisquam laudantium perspiciatis expedita?
+            </b></p>
+        </div>
+    </div>
+    <script src="CourseName.js"></script>
+</body>
+</html>

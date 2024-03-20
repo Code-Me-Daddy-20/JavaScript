@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{ 
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            background-color: black;
+        }
+        .box{
+            width: 40%;
+            height: max-content;
+            border:10px double rgb(0, 255, 102);
+            position: absolute;
+            top: 20%;
+            background-color: rgba(2, 68, 2, 0.53);
+            box-shadow:30px 30px 60px rgb(125, 186, 243),-30px -30px 60px rgb(216, 149, 235);
+            padding: 10px;
+            font-size: 1.8rem;
+            text-align: center;
+            color: aliceblue;
+        }
+        button{
+            height: 40px;width: max-content;
+            font-size:1.63rem;
+            background-color: antiquewhite;
+            border: transparent;
+            border-radius: 10px;
+            margin-bottom:5px;
+            color: darkgreen;
+        }
+        h1{
+            color: goldenrod;
+            background-color: antiquewhite;
+            backdrop-filter: blur(50px);
+        }
+        #msg{
+            font-style: oblique;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>BlackJack</h1>
+        <p id="msg">Want to play a round?</p>
+        <p id="cds">Cards:</p>
+        <p id="sum">Sum:</p>
+        <button onclick="startGame()">PLAY</button><br>
+        <button onclick="newCard()">NEW CARD</button>
+        <p id="per_chips"></p>
+
+        <script src="BlackJack.js"></script>
+    </div>
+</body>
+</html>
