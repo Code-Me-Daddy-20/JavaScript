@@ -9,35 +9,35 @@ console.log(typeof(diffArr))
 
 
 
-// // push / pop
-// myArr.push(6,7,8,9)
-// console.log(myArr)
+// push / pop
+myArr.push(6,7,8,9)
+console.log(myArr)
 
-// myArr.pop()
-// console.log(myArr)
-
-
-
-
-// // shift / unshift
-// console.log(myArr.shift())  // Removes the first element from an array and returns it. If the array is empty, undefined is returned and the array is not modified.
-// console.log(myArr.unshift(33,34))   // Inserts new elements at the start of an array, and returns the new length of the array.
-
-// console.log(myArr)
+myArr.pop()
+console.log(myArr)
 
 
 
 
+// shift / unshift
+console.log(myArr.shift())  // Removes the first element from an array and returns it. If the array is empty, undefined is returned and the array is not modified.
+console.log(myArr.unshift(33,34))   // Inserts new elements at the start of an array, and returns the new length of the array.
 
-// // join 
-// let joinArr = myArr.join()
-// console.log(joinArr +" ----- "+typeof(joinArr))     // join converts to type string
+console.log(myArr)
 
-// // slice / splice
-// console.log(myArr.slice(2,5))   // Returns a copy of a section of an array. For both start and end, a negative index can be used to indicate an offset from the end of the array
 
-// let splicedArr = myArr.splice(3,5)  // Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.
-// console.log(`SplicedArr : ${splicedArr} --> OgArr : ${myArr}`)
+
+
+
+// join 
+let joinArr = myArr.join()
+console.log(joinArr +" ----- "+typeof(joinArr))     // join converts to type string
+
+// slice / splice
+console.log(myArr.slice(2,5))   // Returns a copy of a section of an array. For both start and end, a negative index can be used to indicate an offset from the end of the array
+
+let splicedArr = myArr.splice(3,5)  // Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.
+console.log(`SplicedArr : ${splicedArr} --> OgArr : ${myArr}`)
 
 
 

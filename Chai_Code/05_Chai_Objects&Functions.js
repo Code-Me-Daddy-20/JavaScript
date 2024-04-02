@@ -100,7 +100,105 @@ console.log(ObjArr)
 console.log(ObjArr[1]['4'])
 
 
+
 // Accessing nested arrays and objects inside an array of objects
 console.log(Object.keys(ObjArr[0]))
 console.log(Object.values(ObjArr[1]))
 console.log(Object.entries(ObjArr))     // the index of the object are the keys
+
+
+
+
+
+// De-Structuring an Object
+const course = {
+    course_name : "JScript",
+    price : 999, 
+    corse_Teacher :  "Mr. Smith"
+}
+
+const {price : new_price} = course
+console.log(new_price) // after de-structuring the object , we can get the value of object in new variables
+
+
+
+
+// Functions
+function loginName(username = "Sai"){       // default name given if no argument is passed
+    return `Welcome, ${username} just logged in`
+}
+
+console.log(loginName())
+
+
+function addCart(v1,...num){        // v1->1 , num->2,3,4,5,6,7,8,9,10
+    return `${v1},${num}`
+}
+
+console.log(addCart(1,2,3,4,5,6,7,8,9,10)) 
+
+
+
+// function hoisting
+console.log(add1(10))   // this works as the function is declared only
+
+function add1(v1){      
+    return v1+=1
+}
+
+console.log(add1(2))    // this works as the function is declared only (2)
+
+
+
+// console.log(add2(10))   // this does not works as the function is in an expression and a variable holds it 
+
+let add2 = function(v1){      
+    return v1+=2
+}
+
+console.log(add2(2))    // this works as the function is declared only (3)
+
+
+
+
+// this and arrow function 
+
+const user = {
+    username : "Chai & Code1",
+    price : 999,
+    welcomeMsg : function ( ){
+        console.log(`${this.username} , welcome to our website`)
+        console.log(this)
+    }
+
+}
+
+
+user.welcomeMsg()
+user.username = "Lele"     
+user.welcomeMsg()
+
+// this keyword doesnt work inside a function, but an object
+
+const arrowAdd = (a1, a2) => (a1 + a2)  // implicit arrow function, return not used iff parentheses is used
+console.log(arrowAdd(2,3))
+
+
+// IIFE - immediatly invoked function expression
+
+const le = () => ("IIFE")
+console.log(le())
+
+
+(function chai() {
+    console.log("IIFE");
+})();       // o/p - IIFE
+
+((name) => {
+    console.log(name);
+})("LELELE")       // o/p - LELELE
+// to reduce global variable polution we use IIFE
+
+
+
+
