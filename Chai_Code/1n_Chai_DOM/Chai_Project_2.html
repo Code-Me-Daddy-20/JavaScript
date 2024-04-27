@@ -1,0 +1,32 @@
+<!-- KeyBoard Checker -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyBoard Checker</title>
+</head>
+<body style="background-color: #212121; color: aliceblue; display: flex; justify-content:  center; align-items: center;">
+    <div class="table"> <h2>Press any key</h2> </div>
+</body>
+<script>
+    const table = document.querySelector('.table')
+
+    window.addEventListener("keydown", function(e){
+        table.innerHTML = `
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>KeyCode</th>
+                <th>Code</th>
+            </tr>
+            <tr>
+                <td>${e.key === " " ?  'Space' : e.key}</td>
+                <td>${e.keyCode}</td>
+                <td>${e.code}</td>
+            </tr>
+        </table>
+        `
+    })
+</script>
+</html>

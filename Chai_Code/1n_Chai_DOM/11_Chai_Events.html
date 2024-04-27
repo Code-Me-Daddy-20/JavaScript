@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    
+<div class="outerBox" style="width: 200px; height: 250px; background-color: red; border: 2px solid white; margin: 10px; display: flex;">
+    <div class="innerBox" style="width: 100px; height: 125px; background-color: rgb(34, 0, 223);"></div>
+    <span class="inner2Box" style="width: 50px; height: 62px; background-color: rgb(201, 223, 0);">content</span>
+    
+    <a href="https://www.google.com/" class="ggl">GOOGLE</a>
+</div>
+
+
+
+<div class="heads" style="border: 2px solid white; padding: 10px;">
+    setTimeout()
+    <h1 id="hd1">fn_in_TimeOut</h1>
+    <h1 id="hd2">fn_out_TimeOut</h1>
+    <button id="btn">Stop Event</button>
+</div>
+</body>
+<script>
+    
+    // EventListners
+    // important events - type, timestamps, defaultPrevanted, target, toElement, srcElement
+    // currentTarget, clientX, clientY, screenX, screenY, offset
+    // ctrlKey, altKey, shiftKey, keyCode
+
+
+
+    // 3rd parameter is for event bubbling(F)/capturing(T) - F is Default in JS
+    // stopPropagation() - // stops bubbling
+    document.querySelector(".outerBox").addEventListener("click",(e) => {
+        alert(`You clicked red box`)
+    },false)            
+
+    document.querySelector(".innerBox").addEventListener("click",(e) => {
+        alert(`You clicked blue box`)
+        e.stopPropagation()     
+    },false)
+   
+    document.querySelector(".inner2Box").addEventListener("click",(e) => {
+        alert(`You clicked yellow box`)
+        // e.stopPropagation()     
+    },false)
+    
+
+
+    // preventDefault() - prevents the default function
+    document.querySelector(".ggl").addEventListener("click",(e) => {
+        alert(`You clicked google link`)
+        e.preventDefault()      
+    },false)
+
+
+    
+    // .target & .tagName - 
+    document.querySelector(".outerBox").addEventListener("click",(e) => {
+        if(e.target.tagName === "DIV"){
+            console.log(e.target.tagName)
+            e.target.style.backgroundColor = "grey";
+        }
+    } , false)
+
+
+    // setTimeout() & clearTimeout() 
+    setTimeout(() => {
+        document.querySelector("#hd1").style.color = "cyan"
+    }, 3000)    // function inside
+
+    const expOut = function(){
+        document.querySelector("#hd2").style.backgroundColor = "cyan"
+        document.querySelector("#hd2").style.color = "aliceblue"
+    }
+    const change2 = setTimeout(expOut, 3000)        // function outside
+
+    document.querySelector("#btn").addEventListener("click", () => {
+        clearTimeout(change2) 
+    })
+
+
+    // setInterval() & clearinterval()
+
+</script>
+</html>

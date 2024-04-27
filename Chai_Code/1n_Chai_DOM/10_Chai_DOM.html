@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai and JS</title>
+</head>
+<body>
+    <ul class="lang">
+        <li>JavaScript</li>
+    </ul>
+
+    
+</body>
+<script>
+    // Adding elements to the document
+    function addLang(l){
+        let newlist = document.createElement("li")
+        // newlist.textContent = `${l}`    // Not-Optimized
+        newlist.appendChild(document.createTextNode(l))     // Optimized
+        document.querySelector(".lang").appendChild(newlist)
+    }
+    addLang('Go')
+    addLang('ReactGo')          // delete
+    addLang('TypeScript')
+    addLang('Vue')              // replace
+    addLang('MongoDB')
+
+    // Editing elements of the document
+    
+    //replace
+    const repList = document.querySelector("li:nth-child(5)")
+    // console.log(repList)
+    const newLi = document.createElement("li"); newLi.textContent = "NodeJS"
+    repList.replaceWith(newLi)
+
+    // delete
+    const delList = document.querySelector("li:nth-child(3)")
+    // console.log(delList)  
+    delList.remove()
+
+</script>
+</html>

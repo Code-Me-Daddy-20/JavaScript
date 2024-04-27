@@ -1,0 +1,58 @@
+<!-- Infinte color generator -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Color Generator</title>
+</head>
+<body>
+    <h1>Background color generator</h1>
+    <button id="Start">Start</button>
+    <button id="Stop">Stop</button>
+</body>
+
+<script>
+    // random color generator function
+    const rdColor = function(){
+        const hexColor = "0123456789ABCDEF"
+        let bgColor = "#"
+
+        for (let index = 0; index < 6; index++) {
+            bgColor += hexColor.charAt(Math.floor(Math.random() * 16))
+        }
+        return bgColor
+    }
+
+
+
+
+    // background color change function - on button click - setinterval 
+    let setColor 
+    const bgColorFunc = function(){
+        document.body.style.backgroundColor = rdColor()             // () as the function returns value
+    }
+    const startColorChange = function(){
+        if(!setColor){          // if(!null) - set the color
+            setColor = setInterval(bgColorFunc, 500)
+        }
+        // setInterval(() => {
+        //     document.body.style.backgroundColor = rdColor()
+        // }, 1000)
+    }
+    document.querySelector("#Start").addEventListener("click", startColorChange)
+
+
+
+
+    // stop background color change
+    const stopColorChange = function(){
+        clearInterval(setColor)
+        setColor = null         // clean code - memory save
+    }
+    document.querySelector("#Stop").addEventListener("click", stopColorChange)
+
+
+
+</script>
+</html>
