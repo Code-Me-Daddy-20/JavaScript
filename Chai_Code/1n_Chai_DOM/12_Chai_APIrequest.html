@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API request</title>
+</head>
+<body style="background-color: #212121;">
+    <button style="border: 2px solid aliceblue; background-color: black; color: aliceblue; padding: 10px;">Get Hitesh Choudhary Details</button>
+
+    <div class="card" style="height: max-content; width: max-content; padding: 10px; border: 2px solid aliceblue; margin: 10px; color: aliceblue; display: block;">
+        <img src="/Chai_Code/picz/Screenshot (22).png" alt="hitesh_pic" style="height: 100px; width: 180px; ">
+        <div class="name">Name : Random </div>
+        <div class="fol">Followers : 0</div>
+    </div>
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest()
+    let resData
+    xhr.open('GET' , requestURL)
+    xhr.onreadystatechange = () => {
+        console.log(xhr.readyState)
+        if (xhr.readyState === 4 ) {
+            resData = JSON.parse(xhr.responseText)
+            console.log(resData)
+            console.log(resData.followers)
+        }
+    }
+    xhr.send()
+
+
+    document.querySelector("button").addEventListener("click", () => {
+        // document.querySelector(".card").style.display = "block"
+        document.querySelector('img').src = "/Chai_Code/picz/Screenshot (18).png"
+        document.querySelector('.name').innerHTML = `Name : ${resData.login}`
+        document.querySelector('.fol').innerHTML = `Followers : ${resData.followers}`
+    })
+ </script>
+<!--<script>
+    const sendRequest = function(){
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://example.com/api");
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function() {
+            if (this.readyState === XMLHttpRequest.DONE) {
+                if (this.status === 200) {
+                    document.getElementById("response").innerHTML = this.responseText;
+                }
+            }
+        };
+        xhr.send(JSON.stringify({name: "John Doe"}));
+    }
+</script>
+<button onclick="sendRequest()">Send Request</button>
+<div id="response"></div> -->
+</html>
