@@ -15,11 +15,12 @@
     </div>
 </body>
 <script>
+    // Getting data from API
     const requestURL = 'https://api.github.com/users/hiteshchoudhary'
-    const xhr = new XMLHttpRequest()
+    const xhr = new XMLHttpRequest()    // (old) alt for fetch()
     let resData
-    xhr.open('GET' , requestURL)
-    xhr.onreadystatechange = () => {
+    xhr.open('GET' , requestURL)        // The open() method of the XMLHttpRequest object is called with the HTTP method (GET) and the requestURL as arguments.
+    xhr.onreadystatechange = () => {    // The onreadystatechange property of the XMLHttpRequest object is set to a callback function that is called whenever the readyState property of the object changes.
         console.log(xhr.readyState)
         if (xhr.readyState === 4 ) {
             resData = JSON.parse(xhr.responseText)

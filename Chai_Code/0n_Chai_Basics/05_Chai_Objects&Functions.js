@@ -180,7 +180,7 @@ user.welcomeMsg()
 
 // this keyword doesnt work inside a function, but an object
 
-const arrowAdd = (a1, a2) => (a1 + a2)  // implicit arrow function, return not used iff parentheses is used
+const arrowAdd = (a1, a2) => (a1 + a2)  // implicit arrow function, return not used as parentheses is used
 console.log(arrowAdd(2,3))
 
 
@@ -196,7 +196,7 @@ console.log(le())
 
 ((name) => {
     console.log(name);
-})("LELELE")       // o/p - LELELE
+})("LELELE")       // o/p - LELELE 
 // to reduce global variable polution we use IIFE
 
 

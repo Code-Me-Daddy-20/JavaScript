@@ -48,13 +48,15 @@ const myObject = {
 
 // higher order array loops - for each
 
-// const arrForEach = ['HTML','CSS','JavaScript']
-// arrForEach.forEach( (i, index, arrlist) => {
-//     console.log(i, typeof(i), index, arrlist);
-// })
+const arrForEach = ['HTML','CSS','JavaScript']
+arrForEach.forEach( (i, index, arrlist) => {
+    console.log(i, typeof(i), index, arrlist);
+})
 
-// Iteration of the object list in array with for each
+// Iteration of the object list in array using for each
 const objArrForEach = [{lang: 'html', ind: '0'},{lang:'js', ind:'1'},{lang:'React', ind:'2'}]
 objArrForEach.forEach( (item) => {
     console.log(item," - ", typeof(item), " - ", item.lang, " - ", item.ind);
 })
+
+// For Each does not return any values
